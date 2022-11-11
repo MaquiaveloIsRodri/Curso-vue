@@ -15,16 +15,25 @@
         const vm = Vue.createApp({
             data() {
                 return {
-                    evt: "submit",
-                    counter: 0
+                    firstName: "Diana",
+                    lastName: "Martinez",
+                    now: new Date()
                 };
             },
-            methods: {
-                submit() {
-                    this.counter++;
+            computed: {
+                //aca vamos a generar las propiedades
+                //computadas , juntamos a vas de una varible
+                fullName() {
+                    return this.firstName + " " + this.lastName;
+                },
+                today() {
+                    return this.now.toLocaleDateString();
                 }
             },
-            template: `<form v-on:[evt]="submit"><button>{{ counter }}</button></form>`
+            template: `
+            <div>{{ fullName }}</div>
+            <div>{{ today }}</div>
+            `
         }).mount("#app");
     </script>
 </body>
