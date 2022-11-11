@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello vue</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/vue@next"></script>
+    <div id="app"></div>
+    <script>
+        Vue.createApp({
+            //funcion para crear app
+            data() {
+                //los datos que enviamos
+                return {
+                    //lo que podemos enviar
+                    msg: "Hello word!"
+                }
+            },
+            //aca tenemos el template con sus directivas
+            template: `<div v-text='msg'></div>`
+        }).mount("#app")
+    </script>
+</body>
+
+</html>
