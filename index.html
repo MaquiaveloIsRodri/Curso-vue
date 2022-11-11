@@ -12,18 +12,20 @@
     <script src="https://unpkg.com/vue@next"></script>
     <div id="app"></div>
     <script>
-        Vue.createApp({
-            //funcion para crear app
+        const vm = Vue.createApp({
             data() {
-                //los datos que enviamos
                 return {
-                    //lo que podemos enviar
-                    msg: "Hello word!"
+                    evt: "submit",
+                    counter: 0
+                };
+            },
+            methods: {
+                submit() {
+                    this.counter++;
                 }
             },
-            //aca tenemos el template con sus directivas
-            template: `<div v-text='msg'></div>`
-        }).mount("#app")
+            template: `<form v-on:[evt]="submit"><button>{{ counter }}</button></form>`
+        }).mount("#app");
     </script>
 </body>
 
